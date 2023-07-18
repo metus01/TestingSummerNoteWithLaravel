@@ -21,11 +21,21 @@
                         <div class="form-group">
                             <label><strong>Title:</strong></label>
                             <input type="text" name="title" class="form-control" />
+                            @error('title')
+                                <div class="is-invalid">
+                                    {{ $message }}
+                                </div>
+                            @enderror
                         </div>
                         <div class="form-group">
                             <strong>Description:</strong>
                             <textarea class="form-control summernote" name="description">
                             </textarea>
+                            @error('description')
+                            <div class="is-invalid">
+                                {{ $message }}
+                            </div>
+                        @enderror
                         </div>
                         <button type="submit" class="btn btn-success">Submit</button>
                     </form>
