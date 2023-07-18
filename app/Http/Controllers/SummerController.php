@@ -3,15 +3,22 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Contracts\View\View;
 use App\Http\Controllers\Controller;
 
 class SummerController extends Controller
 {
-    public function create() :View
+    public function create()
      {
-        return view('summer');
+        $des = htmlspecialchars(Post::find(2)->description);
+        //html = Str::of($des)->toHtmlString();
+        $html = htmlspecialchars_decode($des);
+        return view('summer' , [
+            'des' => $html,
+        ]);
+
      }
      public function store(Request $request)
      {

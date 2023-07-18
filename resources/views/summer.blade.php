@@ -9,6 +9,9 @@
   <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
 </head>
 <body>
+    <div class="alert alert-success">
+        {{-- {{ dd($des)}} --}}
+    </div>
     <div class="row" style="margin-top: 50px;">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-primary">
@@ -29,7 +32,7 @@
                         </div>
                         <div class="form-group">
                             <strong>Description:</strong>
-                            <textarea class="form-control summernote" name="description">
+                            <textarea class="form-control summernote"  name="description">
                             </textarea>
                             @error('description')
                             <div class="is-invalid">
